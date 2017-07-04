@@ -10,6 +10,56 @@ view {
 }
 page {
   height: 100%;
-  border: 1px solid red;
   box-sizing: border-box;
+}
+.cover {
+  height: 100%;
+  width: 100%;
+}
+.high {
+  color: #1AAD16;
+}
+.low {
+  color: #c31;
+}
+.film_list {
+  padding: 10rpx;
+  display: flex;
+}
+.film_pic {
+  width: 40%;
+}
+.film_pic image {
+  height: 400rpx;
+  width: 100%;
+}
+.film_info {
+  padding-left: 20rpx;
+  flex: 1;
+}
+.film_info view {
+  width: 100%;
+  height: auto;
+  margin-bottom: 16rpx;
+}
+.film_name text {
+    font-size: 42rpx;
+}
+.title {
+  color: #666;
+  font-weight: 600;
+}
+.year {
+  color: #888;
+  margin-left: 30rpx;
+}
+.rating text{
+    font-size: 36rpx;
+    line-height: 40rpx;
+}
+.normal {
+  color: #666;
+}
+.desc {
+  margin-left: 30rpx;
 }

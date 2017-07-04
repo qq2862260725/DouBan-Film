@@ -1,61 +1,69 @@
 <block wx:if="{{showLoading}}">
-  <loading>努力加载中</loading>
+    <loading>努力加载中</loading>
 </block>
 <block wx:else>
-    <view class="container">
-        <view class="film">
-            <view class="film_pic">
-                <image src="{{film.images.medium}}" class="cover"></image>
+    <scroll-view scroll-y="true" style="height: 100%;" bindscroll="scroll" bindscrolltolower="scrolltolower">
+        <block>
+            <view class="film_list">
+                <view class="film_pic">
+                    <image src="{{film.images.large}}" class="cover"></image>
+                </view>
+                <view class="film_info">
+                    <view class="film_name">
+                          <text class="title">{{film.title}}</text>
+                          <text class="year">{{film.year}}</text>
+                    </view>
+                    <view class="rating">
+                        <block wx:if="{{film.rating.average > 0}}">
+                            <text class="normal">评分</text>
+                            <text class="{{film.rating.average >= 7 ?'high' : 'low' }} desc">{{film.rating.average}}</text>
+                        </block>
+                        <block wx:else>
+                            <text class="normal">暂无评分</text>
+                        </block>
+                    </view>
+                    <view class="directors">
+                        <text class="normal">导演</text>
+                        <block wx:for-items="{{film.directors}}" wx:for-item="director" wx:key="unique">
+                              <text class="normal desc">{{director.name}}</text>
+                        </block>
+                    </view>
+                    <view class="casts">
+                        <text class="normal">主演</text>
+                        <block wx:for-items="{{film.casts}}" wx:for-item="cast" wx:key="unique">
+                              <text class="normal desc">{{cast.name}}</text>
+                        </block>
+                    </view>
+                    <view class="genres">
+                        <text class="normal">类型</text>
+                        <block wx:for-items="{{film.genres}}" wx:for-item="genre" wx:key="unique">
+                              <text class="normal desc">{{genre}}</text>
+                        </block>
+                    </view>
+                    <view class="genres">
+                        <text class="normal">国家/地区</text>
+                        <block wx:for-items="{{film.countries}}" wx:for-item="countrie" wx:key="unique">
+                              <text class="normal desc">{{countrie}}</text>
+                        </block>
+                    </view>
+                    <view class="seen">
+                        <text class="normal">看过</text>
+                        <text class="normal desc">({{film.collect_count}})</text>
+                    </view>
+                    <view class="wish">
+                        <text class="normal">想看</text>
+                        <text class="normal desc">({{film.wish_count}})</text>
+                    </view>
+                </view>
             </view>
-            <view class="film_info">
-                <view class="film_name">
-                    <text class="code">{{film.title}}</text>
-                    <text class="year">{{film.year}}</text>
-                </view>
-               <view class="score">
-                    <block wx:if="{{film.rating.average > 0 }}">
-                        <text class="code">评分：</text>
-                        <text class="{{film.rating.average >= 7 ? 'high': 'low'}}">{{film.rating.average}}</text>
-                    </block>
-                    <block wx:else>
-                        <text class="code">暂无评分</text>
-                    </block>
-                </view>
-                <view class="director score">
-                    <text>导演：</text>
-                    <text>{{film.directors[0].name}}</text>
-                </view>
-               <view class="director score">
-                    <text>主演：</text>
-                    <block wx:for-items="{{film.casts}}" wx:for-item="cast" wx:key="unique">
-                      <text class="cast">{{cast.name}}</text>
-                  </block>
-                </view>
-                <view class="director score">
-                    <text>类型：</text>
-                    <block wx:for-items="{{film.genres}}" wx:for-item="genre" wx:key="unique">
-                      <text class="cast">{{genre}}</text>
-                  </block>
-                </view>
-                <view class="director score">
-                    <text>国家/地区：</text>
-                    <block wx:for-items="{{film.countries}}" wx:for-item="country" wx:key="unique">
-                      <text class="cast">{{country}}</text>
-                    </block>
-                </view>
-                <view class="director score">
-                    <text>看过</text>
-                    <text class="cast">({{film.collect_count}})</text>
-                </view>
-                <view class="director score">
-                    <text>想看</text>
-                    <text class="cast">({{film.wish_count}})</text>
-                </view>
+        </block>
+        <view class="brief">
+            <view class="opera">
+                <text>剧情简介</text>
+            </view>
+            <view class="opera_desc">
+                <text>{{film.summary}}</text>
             </view>
         </view>
-        <view class="opera">
-            <text class="opera_title">剧情简介</text>
-            <text class="opera_detail">{{film.summary}}</text>
-        </view>
-    </view>
+    </scroll-view>
 </block>

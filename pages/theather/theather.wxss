@@ -1,8 +1,0 @@
-.film_list {
-  padding: 10rpx;
-  display: flex;
-  border: 1px solid blue;
-}
-.film_pic {
-  
-}
