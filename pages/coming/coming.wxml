@@ -37,5 +37,11 @@
                 </view>
             </view>
         </block>
+        <view class="bottom" hidden="{{showBottom}}">
+            <view wx:if="{{bottom}}" class="gif">
+                <image src="../../img/loading.gif" class="cover"></image>
+            </view>
+            <text wx:else>我是有底线的</text>
+        </view>
     </scroll-view>
 </block>

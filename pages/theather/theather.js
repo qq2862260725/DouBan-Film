@@ -4,12 +4,21 @@ Page({
   data: {
       showLoading: true,
       films: [],
+      showBottom: true,
+      bottom: true,
   },
   scroll: function (e) {
-    //console.log(e)
+    
   },
-  onPullDownRefresh: function () {
-    console.log('onPullDownRefresh', new Date())
+  scrolltolower: function () {
+    this.setData({
+      showBottom: false
+    })
+    setTimeout(function () {
+      this.setData({
+        bottom: false
+      })
+    }.bind(this), 2000)
   },
   onLoad: function () {
       var that = this;
@@ -19,7 +28,7 @@ Page({
           "content-type": "json"
         },
         success: function(res) {
-          console.log(res.data.subjects[0]);
+          console.log(res.data);
             that.setData({
                 films: res.data.subjects,
                 showLoading: false

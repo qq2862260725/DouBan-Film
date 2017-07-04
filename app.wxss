@@ -22,6 +22,24 @@ page {
 .low {
   color: #c31;
 }
+.bottom {
+  position: relative;
+  height: 50rpx;
+  width: 100%;
+  text-align: center;
+}
+.bottom text {
+  color: #888;
+  font-size: 36rpx;
+  line-height: 50rpx;
+}
+.gif {
+  position: relative;
+  height: 50rpx;
+  width: 50rpx;
+  left: 50%;
+  margin-left: -25rpx;
+}
 .film_list {
   padding: 10rpx;
   display: flex;
