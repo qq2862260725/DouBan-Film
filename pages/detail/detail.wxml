@@ -1,0 +1,61 @@
+<block wx:if="{{showLoading}}">
+  <loading>努力加载中</loading>
+</block>
+<block wx:else>
+    <view class="container">
+        <view class="film">
+            <view class="film_pic">
+                <image src="{{film.images.medium}}" class="cover"></image>
+            </view>
+            <view class="film_info">
+                <view class="film_name">
+                    <text class="code">{{film.title}}</text>
+                    <text class="year">{{film.year}}</text>
+                </view>
+               <view class="score">
+                    <block wx:if="{{film.rating.average > 0 }}">
+                        <text class="code">评分：</text>
+                        <text class="{{film.rating.average >= 7 ? 'high': 'low'}}">{{film.rating.average}}</text>
+                    </block>
+                    <block wx:else>
+                        <text class="code">暂无评分</text>
+                    </block>
+                </view>
+                <view class="director score">
+                    <text>导演：</text>
+                    <text>{{film.directors[0].name}}</text>
+                </view>
+               <view class="director score">
+                    <text>主演：</text>
+                    <block wx:for-items="{{film.casts}}" wx:for-item="cast" wx:key="unique">
+                      <text class="cast">{{cast.name}}</text>
+                  </block>
+                </view>
+                <view class="director score">
+                    <text>类型：</text>
+                    <block wx:for-items="{{film.genres}}" wx:for-item="genre" wx:key="unique">
+                      <text class="cast">{{genre}}</text>
+                  </block>
+                </view>
+                <view class="director score">
+                    <text>国家/地区：</text>
+                    <block wx:for-items="{{film.countries}}" wx:for-item="country" wx:key="unique">
+                      <text class="cast">{{country}}</text>
+                    </block>
+                </view>
+                <view class="director score">
+                    <text>看过</text>
+                    <text class="cast">({{film.collect_count}})</text>
+                </view>
+                <view class="director score">
+                    <text>想看</text>
+                    <text class="cast">({{film.wish_count}})</text>
+                </view>
+            </view>
+        </view>
+        <view class="opera">
+            <text class="opera_title">剧情简介</text>
+            <text class="opera_detail">{{film.summary}}</text>
+        </view>
+    </view>
+</block>

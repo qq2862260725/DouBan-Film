@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/theather/theather",
+    "pages/coming/coming",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#268dcd",
+    "navigationBarTitleText": "豆瓣电影",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/theather/theather",
+        "text": "正在热映",
+        "iconPath": "img/ing.png",
+        "selectedIconPath": "img/sing.png"
+      },
+      {
+        "pagePath": "pages/coming/coming",
+        "text": "即将上映",
+        "iconPath": "img/coming.png",
+        "selectedIconPath": "img/scoming.png"
+      }
+    ]
+  }
+}
