@@ -24,21 +24,63 @@ page {
 }
 .bottom {
   position: relative;
-  height: 50rpx;
+  height: 80rpx;
   width: 100%;
   text-align: center;
 }
 .bottom text {
   color: #888;
   font-size: 36rpx;
-  line-height: 50rpx;
+  line-height: 80rpx;
 }
 .gif {
+    position: relative;
+    height: 80rpx;
+    width: 100%;
+}
+.loading {
   position: relative;
-  height: 50rpx;
-  width: 50rpx;
+  height: 100%;
+  width: 170rpx;
+  display: flex;
   left: 50%;
-  margin-left: -25rpx;
+  margin-left: -65rpx;
+}
+.bounceball {
+    position: relative;
+    height: 74rpx;
+    width: 30rpx;
+}
+.two {
+  margin-left: 40rpx;
+}
+.bounceball:before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: #268dcd;
+  transform-origin: 50%;
+  animation: bounce 500ms alternate infinite ease;
+}
+@keyframes bounce {
+  0% {
+    top:  60rpx;
+    height: 10rpx;
+    border-radius: 120rpx 120rpx 40rpx 40rpx;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 30rpx;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
 }
 .film_list {
   padding: 10rpx;

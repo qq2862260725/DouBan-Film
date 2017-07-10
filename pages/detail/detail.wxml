@@ -2,7 +2,7 @@
     <loading>努力加载中</loading>
 </block>
 <block wx:else>
-    <scroll-view scroll-y="true" style="height: 100%;" bindscroll="scroll" bindscrolltolower="scrolltolower">
+    <scroll-view scroll-y="true" style="height: 100%;">
         <block>
             <view class="film_list">
                 <view class="film_pic">

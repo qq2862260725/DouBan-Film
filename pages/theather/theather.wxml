@@ -38,8 +38,12 @@
             </view>
         </block>
         <view class="bottom" hidden="{{showBottom}}">
-            <view wx:if="{{bottom}}" class="gif">
-                <image src="../../img/loading.gif" class="cover"></image>
+            <view class="gif" wx:if="{{bottom}}">
+                <view class="loading">
+                    <view class="bounceball"></view>
+                    <view class="bounceball two"></view>
+                    <view class="bounceball two"></view>
+                </view>
             </view>
             <text wx:else>我是有底线的</text>
         </view>
